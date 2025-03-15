@@ -1,0 +1,9 @@
+<idea-plugin>
+	<extensions defaultExtensionNs="com.intellij">
+		<!--suppress PluginXmlValidity -->
+		<platform.lsp.serverSupportProvider
+			id="insyncwithfoo.pyrefly.lsp.PyreflyServerSupportProvider"
+			implementation="insyncwithfoo.pyrefly.lsp.PyreflyServerSupportProvider"
+		/>
+	</extensions>
+</idea-plugin>

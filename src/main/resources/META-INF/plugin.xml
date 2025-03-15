@@ -1,0 +1,40 @@
+<!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
+<idea-plugin>
+	<!-- Unique identifier of the plugin. It should be FQN. It cannot be changed between the plugin versions. -->
+	<id>insyncwithfoo.pyrefly</id>
+	
+	<!-- Public plugin name should be written in Title Case.
+		 Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-name -->
+	<!--suppress PluginXmlCapitalization -->
+	<name>Pyrefly</name>
+	
+	<!-- A displayed Vendor name or Organization ID displayed on the Plugins Page. -->
+	<vendor email="insyncwithfoo@gmail.com" url="https://github.com/InSyncWithFoo">InSync</vendor>
+	
+	<!-- Description of the plugin displayed on the Plugin Page and IDE Plugin Manager.
+		 Simple HTML elements (text formatting, paragraphs, and lists) can be added inside of <![CDATA[ ]]> tag.
+		 Guidelines: https://plugins.jetbrains.com/docs/marketplace/plugin-overview-page.html#plugin-description -->
+	<!-- <description><![CDATA[]]></description> -->
+	
+	<!-- Product and plugin compatibility requirements.
+		 Read more: https://plugins.jetbrains.com/docs/intellij/plugin-compatibility.html -->
+	<depends>com.intellij.modules.lang</depends>
+	<depends>com.intellij.modules.platform</depends>
+	
+	<depends optional="true" config-file="lsp4ij.xml">com.redhat.devtools.lsp4ij</depends>
+	<depends optional="true" config-file="ultimate.xml">com.intellij.modules.ultimate</depends>
+	
+	<!-- <resource-bundle>messages.pyrefly</resource-bundle> -->
+	
+	<!-- Extension points defined by the plugin.
+		 Read more: https://plugins.jetbrains.com/docs/intellij/plugin-extension-points.html -->
+	<extensions defaultExtensionNs="com.intellij">
+		<applicationConfigurable
+			id="insyncwithfoo.pyrefly.configurations.PyreflyConfigurable"
+			parentId="tools"
+			bundle="messages.pyrefly"
+			key="configurations.displayName"
+			instance="insyncwithfoo.pyrefly.configurations.PyreflyConfigurable"
+		/>
+	</extensions>
+</idea-plugin>

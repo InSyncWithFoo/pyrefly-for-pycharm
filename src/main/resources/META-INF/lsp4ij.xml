@@ -1,0 +1,18 @@
+<idea-plugin>
+	<extensions defaultExtensionNs="com.redhat.devtools.lsp4ij">
+		<!--suppress PluginXmlCapitalization -->
+		<server
+			id="insyncwithfoo.pyrefly"
+			bundle="messages.pyrefly"
+			nameKey="languageServer.presentableName"
+			factoryClass="insyncwithfoo.pyrefly.lsp4ij.PyreflyServerFactory"
+		/>
+		
+		<languageMapping
+			serverId="insyncwithfoo.pyrefly"
+			language="Python"
+			languageId="python"
+			documentMatcher="insyncwithfoo.pyrefly.lsp4ij.PyreflyServerDocumentMatcher"
+		/>
+	</extensions>
+</idea-plugin>
