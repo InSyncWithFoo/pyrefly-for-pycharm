@@ -4,10 +4,9 @@
 > Disclaimer: This project is not affiliated with Meta/Facebook by any means.
 
 [![Build](https://github.com/InSyncWithFoo/pyrefly-for-pycharm/actions/workflows/build.yaml/badge.svg)][2]
-[![Docs](https://github.com/InSyncWithFoo/pyrefly-for-pycharm/actions/workflows/docs.yaml/badge.svg)][3]
-[![Version](https://img.shields.io/jetbrains/plugin/v/26829)][4]
-[![Rating](https://img.shields.io/jetbrains/plugin/r/rating/26829)][5]
-[![Downloads](https://img.shields.io/jetbrains/plugin/d/26829)][6]
+[![Version](https://img.shields.io/jetbrains/plugin/v/26829)][3]
+[![Rating](https://img.shields.io/jetbrains/plugin/r/rating/26829)][4]
+[![Downloads](https://img.shields.io/jetbrains/plugin/d/26829)][5]
 
 <!-- Plugin description -->
 [Pyrefly][1] is a fast Python type checker and language server
@@ -48,10 +47,10 @@ com.intellij.platform.lsp
 
 ## Installation
 
-This plugin is [available on the Marketplace][4].
-You can also download the ZIP files manually from [the <i>Releases</i> tab][7],
-[the `build` branch][8] or [the <i>Actions</i> tab][9]
-and follow the instructions described [here][10].
+This plugin is [available on the Marketplace][3].
+You can also download the ZIP files manually from [the <i>Releases</i> tab][6],
+[the `build` branch][7] or [the <i>Actions</i> tab][8]
+and follow the instructions described [here][9].
 
 Currently supported versions:
 2024.3.3 (build 243.24978.46) and later.
@@ -62,18 +61,17 @@ Currently supported versions:
 Parts of this repository were taken or derived from:
 
 * [@facebook/pyrefly][1]
-* [@JetBrains/intellij-community][11]
-* [@JetBrains/intellij-platform-plugin-template][12]
+* [@JetBrains/intellij-community][10]
+* [@JetBrains/intellij-platform-plugin-template][11]
 
 
   [2]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/actions/workflows/build.yaml
-  [3]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/actions/workflows/docs.yaml
-  [4]: https://plugins.jetbrains.com/plugin/26829/versions
-  [5]: https://plugins.jetbrains.com/plugin/26829/reviews
-  [6]: https://plugins.jetbrains.com/plugin/26829
-  [7]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/releases
-  [8]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/tree/build
-  [9]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/actions/workflows/build.yaml
-  [10]: https://www.jetbrains.com/help/pycharm/managing-plugins.html#install_plugin_from_disk
-  [11]: https://github.com/JetBrains/intellij-community
-  [12]: https://github.com/JetBrains/intellij-platform-plugin-template
+  [3]: https://plugins.jetbrains.com/plugin/26829/versions
+  [4]: https://plugins.jetbrains.com/plugin/26829/reviews
+  [5]: https://plugins.jetbrains.com/plugin/26829
+  [6]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/releases
+  [7]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/tree/build
+  [8]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/actions/workflows/build.yaml
+  [9]: https://www.jetbrains.com/help/pycharm/managing-plugins.html#install_plugin_from_disk
+  [10]: https://github.com/JetBrains/intellij-community
+  [11]: https://github.com/JetBrains/intellij-platform-plugin-template
