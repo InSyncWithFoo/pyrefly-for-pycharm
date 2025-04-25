@@ -1,13 +1,13 @@
 <svg
 	xmlns="http://www.w3.org/2000/svg"
-	width="16"
-	height="16"
+	width="400"
+	height="400"
 	viewBox="0 0 489.36 489.36"
 >
 	<defs>
 		<style>
 			.forewings {
-				fill: #394048;
+				fill: #fff;
 			}
 			.hindwings {
 				fill: url(#hindwings-background);
