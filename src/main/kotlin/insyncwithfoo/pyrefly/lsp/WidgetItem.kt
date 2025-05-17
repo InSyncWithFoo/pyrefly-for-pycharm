@@ -8,4 +8,4 @@ import insyncwithfoo.pyrefly.configurations.PyreflyConfigurable
 
 
 internal class WidgetItem(lspServer: LspServer, currentFile: VirtualFile?) :
-    LspServerWidgetItem(lspServer, currentFile, Icon.TINY_16, PyreflyConfigurable::class.java)
+    LspServerWidgetItem(lspServer, currentFile, Icon.TINY_16_WHITE, PyreflyConfigurable::class.java)
