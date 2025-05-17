@@ -10,7 +10,6 @@ import insyncwithfoo.pyrefly.path
 import java.nio.file.Path
 
 
-@Suppress("UnstableApiUsage")
 internal class PyreflyServerDescriptor(project: Project, private val executable: Path) :
     ProjectWideLspServerDescriptor(project, PRESENTABLE_NAME) {
     

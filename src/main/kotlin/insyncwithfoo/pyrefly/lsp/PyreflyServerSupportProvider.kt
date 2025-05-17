@@ -11,7 +11,6 @@ import insyncwithfoo.pyrefly.configurations.pyreflyExecutable
 import insyncwithfoo.pyrefly.isPythonFile
 
 
-@Suppress("UnstableApiUsage")
 internal class PyreflyServerSupportProvider : LspServerSupportProvider {
     
     override fun createLspServerWidgetItem(lspServer: LspServer, currentFile: VirtualFile?) =

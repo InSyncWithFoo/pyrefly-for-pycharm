@@ -7,6 +7,5 @@ import insyncwithfoo.pyrefly.Icon
 import insyncwithfoo.pyrefly.configurations.PyreflyConfigurable
 
 
-@Suppress("UnstableApiUsage")
 internal class WidgetItem(lspServer: LspServer, currentFile: VirtualFile?) :
     LspServerWidgetItem(lspServer, currentFile, Icon.TINY_16, PyreflyConfigurable::class.java)
