@@ -6,11 +6,4 @@
 			implementation="insyncwithfoo.pyrefly.lsp.PyreflyServerSupportProvider"
 		/>
 	</extensions>
-	
-	<projectListeners>
-		<listener
-			class="insyncwithfoo.pyrefly.common.ProjectInterpreterChangeListener"
-			topic="com.intellij.openapi.projectRoots.ProjectJdkTable$Listener"
-		/>
-	</projectListeners>
 </idea-plugin>
