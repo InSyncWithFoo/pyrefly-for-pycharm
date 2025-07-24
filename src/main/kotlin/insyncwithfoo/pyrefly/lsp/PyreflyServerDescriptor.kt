@@ -3,7 +3,6 @@ package insyncwithfoo.pyrefly.lsp
 import com.intellij.execution.configurations.GeneralCommandLine
 import com.intellij.openapi.project.Project
 import com.intellij.openapi.vfs.VirtualFile
-import com.intellij.platform.lsp.api.LspServerListener
 import com.intellij.platform.lsp.api.ProjectWideLspServerDescriptor
 import insyncwithfoo.pyrefly.createSettingsObject
 import insyncwithfoo.pyrefly.isPythonFile
@@ -16,9 +15,6 @@ import java.nio.file.Path
 
 internal class PyreflyServerDescriptor(project: Project, private val executable: Path) :
     ProjectWideLspServerDescriptor(project, PRESENTABLE_NAME) {
-    
-    override val lspServerListener: LspServerListener
-        get() = PyreflyServerListener(project)
     
     override val clientCapabilities: ClientCapabilities
         get() = super.clientCapabilities.apply {

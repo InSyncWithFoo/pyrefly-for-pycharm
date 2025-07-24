@@ -15,7 +15,7 @@ private val projectManager: ProjectManager
 
 
 internal val openProjects: Sequence<Project>
-    get() = projectManager.openProjects.asSequence()
+    get() = projectManager.openProjects.asSequence().filter { it.isNormal }
 
 
 internal val Project.path: Path?
