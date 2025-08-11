@@ -23,7 +23,6 @@ jobs:
     outputs:
       version: ${{ steps.properties.outputs.version }}
       changelog: ${{ steps.properties.outputs.changelog }}
-      pluginVerifierHomeDir: ${{ steps.properties.outputs.pluginVerifierHomeDir }}
     
     steps:
       -
@@ -48,16 +47,12 @@ jobs:
         id: properties
         shell: bash
         run: |
-          chmod +x ./gradlew
           PROPERTIES="$(./gradlew properties --console=plain -q)"
           VERSION="$(echo "$PROPERTIES" | grep "^version:" | cut -f2- -d ' ')"
           CHANGELOG="$(python scripts/changelog.py $VERSION)"
           
           echo "version=$VERSION" >> $GITHUB_OUTPUT
-          echo "pluginVerifierHomeDir=~/.pluginVerifier" >> $GITHUB_OUTPUT
           
-          # Avoid "not exported" false positive error
-          # echo "changelog=$CHANGELOG" >> $GITHUB_OUTPUT
           echo "changelog<<EOF" >> $GITHUB_OUTPUT
           echo "$CHANGELOG" >> $GITHUB_OUTPUT
           echo "EOF" >> $GITHUB_OUTPUT
@@ -92,7 +87,7 @@ jobs:
           name: ${{ steps.artifact.outputs.filename }}
           path: ./build/distributions/content/*/*
   
-  changelog:
+  changelogs:
     name: Sync changelogs
     if: github.event_name != 'pull_request'
     needs: [ build ]
@@ -140,10 +135,10 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: zulu
-          java-version: 17
+          java-version: 21
       -
         name: Clear Gradle home cache
-        if: matrix.platform == 'windows-latest'
+        if: matrix.platform == 'windows-latest' && github.event_name != 'pull_request'
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
@@ -154,17 +149,18 @@ jobs:
       -
         name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: true
       -
         name: Run tests
         run: |
-          chmod +x ./gradlew
           ./gradlew check
       -
         name: Upload result
         if: failure()
         uses: actions/upload-artifact@v4
         with:
-          name: tests-result
+          name: tests-result-${{ matrix.platform }}
           path: ${{ github.workspace }}/build/reports/tests
   
   inspect:
@@ -231,18 +227,13 @@ jobs:
       -
         name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
-      -
-        name: Set up IDEs cache
-        uses: actions/cache@v4
         with:
-          path: ${{ needs.build.outputs.pluginVerifierHomeDir }}/ides
-          key: plugin-verifier-${{ hashFiles('build/listProductsReleases.txt') }}
+          cache-read-only: true
       -
         name: Run verifier
         continue-on-error: true
         run: |
-          chmod +x ./gradlew
-          ./gradlew verifyPlugin -Dplugin.verifier.home.dir=${{ needs.build.outputs.pluginVerifierHomeDir }}
+          ./gradlew verifyPlugin
       -
         name: Upload result
         if: always()
@@ -313,6 +304,8 @@ jobs:
       -
         name: Set up Gradle
         uses: gradle/actions/setup-gradle@v4
+        with:
+          cache-read-only: true
       -
         name: Publish plugin to Nightly channel
         env:
@@ -321,8 +314,6 @@ jobs:
           PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
           PRIVATE_KEY_PASSWORD: ${{ secrets.PRIVATE_KEY_PASSWORD }}
         run: |
-          chmod +x ./gradlew
-          
           sed -i -E \
             "s/(pluginVersion = [^[:space:]]+)/\\1-nightly.$(git rev-parse --short HEAD)/g" \
             gradle.properties
