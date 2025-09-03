@@ -14,6 +14,11 @@ For user-facing changes, see [`CHANGELOG.md`][_-1].
 <i>This section is currently empty.</i>
 
 
+## [0.3.0] - 2025-09-03
+
+<i>This section is currently empty.</i>
+
+
 ## [0.2.0] - 2025-07-25
 
 <i>This section is currently empty.</i>
@@ -31,7 +36,8 @@ For user-facing changes, see [`CHANGELOG.md`][_-1].
 * Project initialized.
 
 
-  [Unreleased]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/compare/v0.2.0..HEAD
+  [Unreleased]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/compare/v0.3.0..HEAD
+  [0.3.0]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/compare/v0.2.0..v0.3.0
   [0.2.0]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/compare/v0.1.1..v0.2.0
   [0.1.1]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/compare/v0.1.0..v0.1.1
   [0.1.0]: https://github.com/InSyncWithFoo/pyrefly-for-pycharm/commits/v0.1.0
